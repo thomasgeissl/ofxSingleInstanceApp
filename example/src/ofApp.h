@@ -8,6 +8,7 @@ public ofBaseApp,
 public ofxSingleInstanceApp{
 	
 public:
+    ofApp();
 	void setup();
 	void update();
 	void draw();

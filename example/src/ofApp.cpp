@@ -1,18 +1,15 @@
 #include "ofApp.h"
 
-	
+ofApp::ofApp() :
+    ofxSingleInstanceApp(11111)
+{
+}
 //--------------------------------------------------------------
 void ofApp::setup(){
-	if(!lockApp())
-	{
-		ofLogFatalError("ofApp")<<"There is already an instance running";
-		ofExit(-1);
-	}
 }
 
 //--------------------------------------------------------------
 void ofApp::exit(){
-	unlockApp();
 }
 
 //--------------------------------------------------------------

@@ -5,9 +5,15 @@
 class ofxSingleInstanceApp
 {
 public:
-	ofxSingleInstanceApp(int port = 11111)
+	ofxSingleInstanceApp(int port = 11111) :
+        _port(port)
 	{
+        lockApp();
 	}
+    ~ofxSingleInstanceApp()
+    {
+        unlockApp();
+    }
 	bool lockApp()
 	{
 		if(_tcp.setup(_port))
@@ -16,6 +22,10 @@ public:
 		}
 		else
 		{
+            string errorMessage = "There is already an instance running!";
+            ofLogFatalError("ofxSingleInstanceApp")<<errorMessage;
+            ofSystemAlertDialog(errorMessage);
+            ofExit(-1);
 			return false;
 		}
 	}
