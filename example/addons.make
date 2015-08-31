@@ -1,0 +1,2 @@
+ofxSingleInstanceApp
+ofxNetwork
