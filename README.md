@@ -14,5 +14,4 @@ git clone https://github.com/thomasgeissl/ofxSingleInstanceApp.git /path/to/your
 
 Known issues
 ---
-* There is a bug in openframeworks' ofxNetwork addon, which makes an ofxSingleInstanceApp hang at destruction/exit. 
 * The addon config file is still missing.
